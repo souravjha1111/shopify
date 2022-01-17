@@ -1,0 +1,46 @@
+<div class="content-section">
+    <form method="POST" enctype='multipart/form-data'>
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Inventory List </legend>
+       
+<br>
+<table summary="no_orderDate">
+    <tr>
+        <th>ID</th>
+        <th>Item-identifier</th>
+        <th>Item-name</th>
+        <th>Descriptiom</th>
+        <th>unit-price</th>
+        <th>In-stock-quantity</th>
+        <th>Reorder-level</th>
+        <th>Reorder daya</th>
+        <th>ordered</th>
+        <th>discontinued</th>
+        <th>edit</th>
+        <th>delete</th>
+        
+    {% for row in data %}
+            <tr>
+                <td>{{ row.id }}</td>
+                <td>{{ row.identifier }}</td>
+                <td>{{ row.itemname }}</td>
+                <td>{{ row.descriptiom }}</td>
+                <td>{{ row.unitprice }}</td>
+                <td>{{ row.instockquantity }}</td>
+                <td>{{ row.reorderlevel }}</td>
+                <td>{{ row.reorderdays }}</td>
+                <td>{{ row.ordered }}</td>
+                <td>{{ row.discontinued }}</td>
+                <td> <a href="{% url 'edititem' row.id %}">Edit</a></td>
+                <td> <a href="{% url 'deleteitem' row.id %}">Delete</a></td>
+
+            </tr>
+    {% endfor %}
+    </table>
+                </fieldset>
+                <a href="http://127.0.0.1:8080/additempage/">Add new item</a>
+            </form>
+</div>
+
+<a href="http://127.0.0.1:8080/export/">export data as csv</a>

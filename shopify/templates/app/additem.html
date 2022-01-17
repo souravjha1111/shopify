@@ -1,0 +1,25 @@
+<form action="http://127.0.0.1:8080/getitems/" method="POST">
+        {% csrf_token %}
+        Identifier <input type='text'  name='identifier' placeholder="e.g zaxg54 (optional)" />
+        <br>
+        Itemname <input type='tsxt'  name='itemname' placeholder="e.g shoes" />
+        <br>
+        Description<input type='text'  name='descriptiom' placeholder="e.g good shoes" />
+        <br>
+        Unit-price<input type='number'  name='unitprice' placeholder="e.g 499" />
+        <br>
+        Total price<input type='number'  name='price' placeholder="e.g 5000" />
+        <br>
+        In stock In-stock-quantity<input type='number'  name='instockquantity' placeholder="e.g 50" />
+        <br>
+        Reorder-level<input type='number'  name='reorderlevel' placeholder="reorderlevel" />
+        <br>
+        Reorder days<input type='number'  name='reorderdays' placeholder="reorderdays" />
+        <br>
+        ordered quantity<input type='text'  name='ordered' placeholder="ordered" />
+        <br>
+        Is this item discontinued<input type='checkbox'  name='discontinued' value = "True" placeholder="discontinued" />
+        <br>
+        <input type="submit" value="save">
+</form>
+
